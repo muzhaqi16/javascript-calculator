@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Javascript Calculator">
+    <meta property="og:description" content="Interacive Javascript Calculator.">
+    <meta property="og:image" content="https://muzhaqi16.github.io/2020-04-01-Interactive-Calculator/screenshot.png">
+    <meta property="og:url" content="https://muzhaqi16.github.io/2020-04-01-Interactive-Calculator/index.html">
+
+    <title>Javascript Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <header class="mb-5">
+        <h1 class="display-4">Calculator</h1>
+    </header>
+    <div class="container btn-light" id="main-container">
+        <!-- Display Output -->
+        <div class="row">
+            <div class="col-sm pt-2">
+                <div class="input-group mb-3">
+                    <!-- dir="rtl" -->
+                    <!-- <div id="display">
+                        0
+                    </div> -->
+                    <input type="text" class="form-control form-control-lg" readonly id="display" value="0" />
+                    <!-- <textarea class="form-control form-control-lg" aria-label="Amount (to the nearest dollar)" value="0"
+                        id="display" readonly>
+                    </textarea> -->
+                </div>
+            </div>
+        </div>
+        <!-- On Screen calculator Inputs -->
+        <div class="row">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-sm-6 mb-2">
+                        <button id="clear" class="btn btn-block btn-danger" value="clear"><span
+                                class="h3">AC</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="divide" class="btn btn-block btn-secondary operator" value="/"><span
+                                class="h3">/</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="multiply" class="btn btn-block btn-secondary operator" value="*"><span
+                                class="h3">x</span></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm mb-2">
+                        <button id="one" class="btn btn-block btn-primary number" value="1"><span
+                                class="h3">1</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="two" class="btn btn-block btn-primary number" value="2"><span
+                                class="h3">2</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="three" class="btn btn-block btn-primary number" value="3"><span
+                                class="h3">3</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="subtract" class="btn btn-block btn-secondary operator" value="-"><span
+                                class="h3">-</span></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm mb-2">
+                        <button id="four" class="btn btn-block btn-primary number" value="4"><span
+                                class="h3">4</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="five" class="btn btn-block btn-primary number" value="5"><span
+                                class="h3">5</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="six" class="btn btn-block btn-primary number" value="6"><span
+                                class="h3">6</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="add" class="btn btn-block btn-secondary operator" value="+"><span
+                                class="h3">+</span></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm mb-2">
+                        <button id="seven" class="btn btn-block btn-primary number" value="7"><span
+                                class="h3">7</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="eight" class="btn btn-block btn-primary number" value="8"><span
+                                class="h3">8</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="nine" class="btn btn-block btn-primary number" value="9"><span
+                                class="h3">9</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="delete" class="btn btn-block btn-danger backspace" value="delete"><i
+                                class="fas fa-backspace h3"></i></button>
+                    </div>
+                </div>
+                <div class="row mb-2">
+
+                    <div class="col-sm-6 mb-2">
+                        <button id="zero" class="btn btn-block btn-primary number" value="0"><span
+                                class="h3">0</span></button>
+                    </div>
+                    <div class="col-sm mb-2">
+                        <button id="decimal" class="btn btn-block btn-secondary" value="."><span
+                                class="h3">.</span></button>
+                    </div>
+
+
+                    <div class="col-sm mb-2">
+                        <button id="equals" class="btn btn-block btn-success"><span class="h3">=</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/e67b748ce1.js" crossorigin="anonymous"></script>
+    <script src="script.js" type="text/javascript">
+    </script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
